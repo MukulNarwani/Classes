@@ -63,12 +63,6 @@ class TestMiniTraining(unittest.TestCase):
     lm.train("training_files/unknowns_mixed.txt")
     # (0 + 1) / (2 + 6)
     self.assertAlmostEqual(1 / 8, lm.score("<s> flamingo"), places=3, msg="tests probability of <s> flamingo, trained on iamsam2.txt")
-  #myowntest
-  '''def test_bigramunknownslaplace(self):
-    lm = LanguageModel(2, True)
-    lm.train("training_files/unknowns_mixed.txt")
-    # (0 + 1) / (2 + 6)*()*()*
-    self.assertAlmostEqual(1 / 8, lm.score("<s> flamingo and porcupine"), places=3, msg="tests probability of <s> flamingo, trained on iamsam2.txt")'''
   
   def test_bigram(self):
     lm = LanguageModel(2, False)
