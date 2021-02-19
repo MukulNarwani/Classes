@@ -1,0 +1,10 @@
+Kyle_MukulEx2.obj
+cvi.lib
+advanlys.lib
+NIDAQmx.lib
+cvistart.lib
+kernel32.lib
+user32.lib
+EXE Symbol Module
+Exports Module
+Resource Module

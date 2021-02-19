@@ -1,0 +1,30 @@
+[main]
+Class="Function"
+Prototype="int main(int argc, char *argv[]);"
+SourceLocation="c:\Users\bencashen\Desktop\Kyle_Mukul_labex2\Kyle_MukulEx2.c:27:5"
+
+[Bye]
+Class="Function"
+Prototype="int Bye(int panel, int control, int event, void *callbackData, int eventData1, int eventData2);"
+SourceLocation="c:\Users\bencashen\Desktop\Kyle_Mukul_labex2\Kyle_MukulEx2.c:39:17"
+
+[acquireData]
+Class="Function"
+Prototype="int acquireData(int panel, int control, int event, void *callbackData, int eventData1, int eventData2);"
+SourceLocation="c:\Users\bencashen\Desktop\Kyle_Mukul_labex2\Kyle_MukulEx2.c:52:17"
+
+[saveFrequency]
+Class="Function"
+Prototype="int saveFrequency(int panel, int control, int event, void *callbackData, int eventData1, int eventData2);"
+SourceLocation="c:\Users\bencashen\Desktop\Kyle_Mukul_labex2\Kyle_MukulEx2.c:95:17"
+
+[saveTime]
+Class="Function"
+Prototype="int saveTime(int panel, int control, int event, void *callbackData, int eventData1, int eventData2);"
+SourceLocation="c:\Users\bencashen\Desktop\Kyle_Mukul_labex2\Kyle_MukulEx2.c:118:17"
+
+[transform]
+Class="Function"
+Prototype="int transform(int panel, int control, int event, void *callbackData, int eventData1, int eventData2);"
+SourceLocation="c:\Users\bencashen\Desktop\Kyle_Mukul_labex2\Kyle_MukulEx2.c:141:17"
+
