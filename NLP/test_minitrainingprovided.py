@@ -42,28 +42,34 @@ class TestMiniTraining(unittest.TestCase):
 
   def test_unigramunknowns(self):
     lm = LanguageModel(1, False)
-    lm.train("training_files/iamsam.txt")
-    # ((0) / (10))
-    self.assertEqual(0, lm.score("flamingo"), msg="tests probability of flamingo, trained on iamsam.txt")
+    lm.train("training_files/unknowns_mixed.txt")
+    # ((1) / (11))
+    self.assertAlmostEqual(1 / 11, lm.score("flamingo"), places=3, msg="tests probability of flamingo, trained on iamsam.txt")
 
   def test_unigramunknownslaplace(self):
     lm = LanguageModel(1, True)
-    lm.train("training_files/iamsam.txt")
-    # ((0 + 1) / (10 + 5))
-    self.assertAlmostEqual(0.0666667, lm.score("flamingo"), places=3, msg="tests probability of flamingo, trained on iamsam.txt")
+    lm.train("training_files/unknowns_mixed.txt")
+    # ((1 + 1) / (11 + 6))
+    self.assertAlmostEqual(2 / 17, lm.score("flamingo"), places=3, msg="tests probability of flamingo, trained on iamsam.txt")
 
   def test_bigramunknowns(self):
     lm = LanguageModel(2, False)
-    lm.train("training_files/iamsam.txt")
+    lm.train("training_files/unknowns_mixed.txt")
     # ((0) / (2))
     self.assertEqual(0, lm.score("<s> flamingo"), msg="tests probability of <s> flamingo, trained on iamsam.txt")
 
   def test_bigramunknownslaplace(self):
     lm = LanguageModel(2, True)
-    lm.train("training_files/iamsam2.txt")
-    # (0 + 1) / (4 + 6)
-    self.assertAlmostEqual(0.1, lm.score("<s> flamingo"), places=3, msg="tests probability of <s> flamingo, trained on iamsam2.txt")
-
+    lm.train("training_files/unknowns_mixed.txt")
+    # (0 + 1) / (2 + 6)
+    self.assertAlmostEqual(1 / 8, lm.score("<s> flamingo"), places=3, msg="tests probability of <s> flamingo, trained on iamsam2.txt")
+  #myowntest
+  '''def test_bigramunknownslaplace(self):
+    lm = LanguageModel(2, True)
+    lm.train("training_files/unknowns_mixed.txt")
+    # (0 + 1) / (2 + 6)*()*()*
+    self.assertAlmostEqual(1 / 8, lm.score("<s> flamingo and porcupine"), places=3, msg="tests probability of <s> flamingo, trained on iamsam2.txt")'''
+  
   def test_bigram(self):
     lm = LanguageModel(2, False)
     lm.train("training_files/iamsam2.txt")
